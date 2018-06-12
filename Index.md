@@ -1,17 +1,9 @@
 # <center>2018超越物理夏令营Linux指南</center>
-### <center>~~**——走进玄学**~~</center>
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<center>![](img/139596295633445.png)</center>
 <!--TODO:插入超越图片-->
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>
