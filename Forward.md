@@ -33,7 +33,7 @@
 
 > 在一所小学里，心理学家随机选择 20% 的学生，告诉老师他们比别人更聪明。一年之后，这些学生的 IQ 测验果然 (在统计意义上) 更佳。
 
-&emsp;&emsp;这个故事流传甚广，但很少有人给出参考文献。这是历史上真实存在的一个试验，1963 年由罗胜道与贾步升在美国加州南旧金山市橡树小学实施。罗是加州大学心理学家教授，而贾时任橡树小学校长。二人于 1968 年就此试验发表了《课堂上的毕马隆效应》，链接在[这里](http://books.google.pt/books?id=9HbuAAAAMAAJ/)^1^。
+&emsp;&emsp;这个故事流传甚广，但很少有人给出参考文献。这是历史上真实存在的一个试验，1963 年由罗胜道与贾步升在美国加州南旧金山市橡树小学实施。罗是加州大学心理学家教授，而贾时任橡树小学校长。二人于 1968 年就此试验发表了《课堂上的毕马隆效应》，链接在[这里][1]。
 
 &emsp;&emsp;毕马隆是希腊神话里的一位雕刻家，就是爱上自己作品的那位。这 (两) 个故事告诉我们：第一，~~只要功夫深，不怕女神不动心~~（来自同桌的教训）；第二，如果有心理学家来你们学校做试验，躲得越远越安全 —— 80% 和 20%，你觉得哪个几率更大一些？
 
@@ -103,7 +103,7 @@
 * 各种Cheat Sheet
 
 ## 本指南中的实例
-&emsp;&emsp;本指南包含了大量实例——包括各种Shell命令的实例和用C/C++以及Golang编写的一些完整的程序，能够帮你~~节省上百度找代码抄~~的时间。本指南以及实例的代码托管在Github上，链接在[这里](https://github.com/chfanghr/linux-guide)^2^，你可以使用git或网页获得它们。
+&emsp;&emsp;本指南包含了大量实例——包括各种Shell命令的实例和用C/C++以及Golang编写的一些完整的程序，能够帮你~~节省上百度找代码抄~~的时间。本指南以及实例的代码托管在Github上，链接在[这里][2]，你可以使用git或网页获得它们。
 
 ## License
 MIT,详见[LICENSE](LICENSE)
@@ -112,12 +112,10 @@ MIT,详见[LICENSE](LICENSE)
 &emsp;&emsp;感谢~~PornHub~~GitHub在我~~腰腿酸痛精神不振~~时给了我继续写下去的动力，~~并让我差点没挂掉~~，以及我的同桌**上物理课**帮我放风。
 
 ## 关于作者
-&emsp;&emsp;本人唯一的爱好就是~~写代码~~上B站看鬼畜，给Linux项目贡献过代码，个人主页在[这里](https://gitee.com/Fanghr)^3^。
+&emsp;&emsp;本人唯一的爱好就是~~写代码~~上B站看鬼畜，给Linux项目贡献过代码，个人主页在[这里][3]。
 
 <p align="right">June 11, 2018 4:18 PM</p>
 
-_ _ _
-
-1. http://books.google.pt/books?id=9HbuAAAAMAAJ/<br>
-2. https://github.com/chfanghr/linux-guide
-3. https://gitee.com/Fanghr
+[1]:http://books.google.pt/books?id=9HbuAAAAMAAJ/<br>
+[2]:https://github.com/chfanghr/linux-guide
+[3]:https://gitee.com/Fanghr
