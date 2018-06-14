@@ -1,11 +1,11 @@
 <!--Forward.md-->
-
 # <p align="right">前言:<s>走近玄学</s></p>
 
 ## 假的前言：关于操作系统的一些~~哲学~~讨论
 <blockquote> Liberty means responsibility. That is why most men dread it.
-<p align="right">—  George Bernard Shaw</p></blockquote>
-<blockquote> Unless a man has talents to make something of himself, freedom is an irksome burden.<p align="right">—  Eric Hoffer</p></blockquote>
+<div align="right">—  George Bernard Shaw</div></blockquote>
+
+<blockquote> Unless a man has talents to make something of himself, freedom is an irksome burden.<div align="right">—  Eric Hoffer</div></blockquote>
 
 &emsp;&emsp;用 Linux 五年多了，但此前我从来没有就此写过一句话。不过我倒是经常问别人：你用什么操作系统？尤其对刚认识的人。因为用 Linux 的人很可能跟我三观接近，比较容易成为朋友 (警告：逆命题不成立！)。一个无关痛痒的问题能提供如此重要的信息，何乐而不为？
 
@@ -88,6 +88,8 @@
 &emsp;&emsp;以此为标准，Linux 目前是个不错的选择，而 Windows 不满足任何一条。
 
 ## 真的前言：为什么有这本指南？
+> **"You know nothing ,John Snow."**
+
 &emsp;&emsp;技术日新月异，产业斗转星移，滚滚红尘，消逝的事物太多，新事物的诞生也更加迅猛。众多新生事物如灿烂烟火，转瞬即逝。当我们仰望星空时，在浩如烟海的专业名词中寻找，赫然发现，Linux的生命力之旺盛，斗志之昂扬雄壮，令人称奇。它正以摧枯拉朽之势迅速占领云计算、服务器、消费电子、工业控制、仪器仪表、导航娱乐等在内的众多应用领域，并逐步占据许多WINCE、VxWorks的传统嵌入式市场。Linux所到之处，所向披靡。
 
 &emsp;&emsp;由于软件版权、开发难度以及**逼格**的问题，超越物理组从2017年开始已经将主要项目逐渐从Arduino/51迁移到**ARM Linux**平台，开发也逐渐从Visual Studio（Windows only）转到Jetbrains（Linux）系。于是——如你所见，本次夏令营的项目也将基于Linux。为了你的~~身体健康~~**逼格**，这本指南将会带你走进Linux的世界。
@@ -97,7 +99,7 @@
 * Linux操作系统的基础知识
 * 作为用户在Linux上的各种操作：Shell和GUI
 * 在Linux上配置一个软件开发环境
-* 利用IDE在Linux上开发简单的应用程序（C/C++和Golang）
+* 利用IDE（集成开发环境，包括编辑器和构建工具的软件集合）在Linux上开发简单的应用程序（C/C++和Golang）
 * 版本管理工具Git的使用
 * 管理Linux系统
 * 各种Cheat Sheet
@@ -109,12 +111,14 @@
 MIT,详见[LICENSE](LICENSE)
 
 ## 致谢
-&emsp;&emsp;感谢~~PornHub~~GitHub在我~~腰腿酸痛精神不振~~时给了我继续写下去的动力，~~并让我差点没挂掉~~，以及我的同桌**上物理课**帮我放风。
+&emsp;&emsp;感谢~~PornHub~~GitHub在我~~腰腿酸痛精神不振~~时给了我继续写下去的动力，~~并让我差点没挂掉~~，以及我的同桌**上物理课**帮我放风。当然还有超越的各位朋友啦。
 
 ## 关于作者
+<div align="center"><img src="Author.jpeg" title="猥琐的鸟" height="150" width="150"></div>
+
 &emsp;&emsp;本人唯一的爱好就是~~写代码~~上B站看鬼畜，给Linux项目贡献过代码，个人主页在[这里][3]。
 
-<p align="right">June 11, 2018 4:18 PM</p>
+<div align="right">June 11, 2018 4:18 PM</div>
 
 [1]:http://books.google.pt/books?id=9HbuAAAAMAAJ/<br>
 [2]:https://github.com/chfanghr/linux-guide
