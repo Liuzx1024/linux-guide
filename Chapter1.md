@@ -1,5 +1,5 @@
 <!--Chapter1.md-->
-# <div align="right">第一章 基础知识</div>
+# 第一章 基础知识
 
 ## 1.1 绪论：操作系统
 <blockquote>&emsp;&emsp;操作系统理论在计算机科学中，為歷史悠久而又活跃的分支；而操作系统的设计与实现则是软件工业的基础与核心。<div align="right">——来自[维基百科][1]</div></blockquote>

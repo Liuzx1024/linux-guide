@@ -1,5 +1,5 @@
 <!--Forward.md-->
-# <p align="right">前言:<s>走近玄学</s></p>
+# 前言:~~走近玄学~~
 
 ## 假的前言：关于操作系统的一些~~哲学~~讨论
 <blockquote> Liberty means responsibility. That is why most men dread it.<div align="right">—  George Bernard Shaw</div></blockquote>
