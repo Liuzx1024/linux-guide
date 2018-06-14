@@ -2,8 +2,7 @@
 # <p align="right">前言:<s>走近玄学</s></p>
 
 ## 假的前言：关于操作系统的一些~~哲学~~讨论
-<blockquote> Liberty means responsibility. That is why most men dread it.
-<div align="right">—  George Bernard Shaw</div></blockquote>
+<blockquote> Liberty means responsibility. That is why most men dread it.<div align="right">—  George Bernard Shaw</div></blockquote>
 
 <blockquote> Unless a man has talents to make something of himself, freedom is an irksome burden.<div align="right">—  Eric Hoffer</div></blockquote>
 
@@ -41,7 +40,9 @@
 
 &emsp;&emsp;Windows 如何影响用户的行为我不清楚，而 Linux 对用户的影响倒是十分有意思。既然假定 “用户知道自己想要什么，也明白自己在做什么，并且会为自己的行为负责”， 如果发生毕马隆效应，那么相当一部分用户会慢慢学会用自己的脑袋思考，按自己的意志行事，并为自己的行为负责。这就是自由，也是 “Free Software” 之 “Free” 的本意。
 
->自由软件的“自由”：**相对于使用自由而言，更重要的是开发（修改、发行）自由**
+<blockquote><strong> "Free software" is a matter of liberty, not price. To understand the concept, you should think of "freespeech", not "free beer". "Free software" refers to the users' freedom to run, copy, distribute, study, change,and improve the software"</strong></blockquote>
+
+<blockquote>自由软件的“自由”：**相对于使用自由而言，更重要的是开发（修改、发行）自由**</blockquote>
 
 &emsp;&emsp;说到自由，不能不提 John Stuart Mill (约翰 · 斯图亚特 · 穆勒) 的 On Liberty (《论自由》)。 我有一本严复先生译的《群己权界论》，买英文版赠的。由于是赠本，印刷装帧不免略显简陋。一次，我的一个同学拿起这本书看了两眼，问我，这是什么书，不是哪个邪教的教义吧？严复恐怕想不到，在他身后近百年，在他的国家二度成为共和国之后六十多年，一个受过良好教育的高级知识分子会把他的译著当做 “邪教教义”。(可能是那本书长的比较丑)
 
