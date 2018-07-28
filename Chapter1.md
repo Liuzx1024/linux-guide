@@ -65,7 +65,7 @@
 * 2003年12月，Linux 2.6版内核发布，相对于2.4版内核2.6在对系统的支持都有很大的变化。
 * 2004年的第1月，SuSE嫁到了Novell，SCO继续顶着骂名四处强行“化缘”， Asianux， MandrakeSoft也在五年中首次宣布季度赢利。3月，SGI宣布成功实现了Linux操作系统支持256个Itanium 2处理器。&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——以上均选自[百度百科][4]
 
-## 1.2.3 Linux的基本思想
+### 1.2.3 Linux的基本思想
 &emsp;&emsp;Linux的基本思想有两点最主要的：第一，一切都是文件。是的没错，Linux把系统中所有东西都归结为文件，包括一些设备（软件或硬件）、命令、进程、甚至是操作系统。可以把他们理解为具有各自特性或类型的文件。&emsp;&emsp;第二，每个软件都有自己确定的用途。这也是实现前文所说的系统高效的重要条件。
 
 
