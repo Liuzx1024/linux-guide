@@ -45,6 +45,28 @@
 8. 1988年:图形接口 XFree86 计划
 9. 1991年:芬兰大学生 Linus Torvalds 的一则简讯——Linux诞生
 
+### 1.2.2 Linux发展史
+
+> &emsp;&emsp;Linux 操作系统的诞生、发展和成长过程始终依赖着五个重要支柱：UNIX 操作系统、MINIX 操作系统、GNU计划、POSIX 标准和Internet 网络。
+——来自[百度百科][4]
+
+* 1981 年IBM公司推出微型计算机IBM PC。
+* 1991年，GNU计划已经开发出了许多工具软件，最受期盼的GNU C编译器已经出现，GNU的操作系统核心HURD一直处于实验阶段，没有任何可用性，实质上也没能开发出完整的GNU操作系统，但是GNU奠定了Linux用户基础和开发环境。
+* 1991年初，林纳斯·托瓦兹开始在一台386sx兼容微机上学习minix操作系统。1991年4月，林纳斯·托瓦兹开始酝酿并着手编制自己的操作系统。
+* 1991 年4 月13 日在comp.os.minix 上发布说自己已经成功地将bash 移植到了minix 上，而且已经爱不释手、不能离开这个shell软件了。
+* 1991年7月3日，第一个与Linux有关的消息是在comp.os.minix上发布的（当然此时还不存在Linux这个名称，当时林纳斯·托瓦兹的脑子里想的可能是FREAX，FREAX的英文含义是怪诞的、怪物、异想天开等）。
+* 1991年的10月5日，林纳斯·托瓦兹在comp.os.minix新闻组上发布消息，正式向外宣布Linux内核的诞生（Freeminix-like kernel sources for 386-AT）。
+* 1993年，大约有100余名程序员参与了Linux内核代码编写/修改工作，其中核心组由5人组成，此时Linux 0.99的代码大约有十万行，用户大约有10万左右。
+* 1994年3月，Linux1.0发布，代码量17万行，当时是按照**完全自由免费**的协议发布，随后正式采用GPL协议。
+* 1995年1月，Bob Young创办了RedHat（小红帽），以GNU/Linux为核心，集成了400多个源代码开放的程序模块，搞出了一种冠以品牌的Linux，即RedHat Linux,称为Linux"发行版"，在市场上出售。这在经营模式上是一种创举。
+* 1996年6月，Linux 2.0内核发布，此内核有大约40万行代码，并可以支持多个处理器。此时的Linux 已经进入了实用阶段，全球大约有350万人使用。
+* 1998年2月，以Eric Raymond为首的一批年轻的"老牛羚骨干分子"终于认识到GNU/Linux体系的产业化道路的本质，并非是什么自由哲学，而是市场竞争的驱动，创办了"Open Source Intiative"（开放源代码促进会）"复兴"的大旗，在互联网世界里展开了一场历史性的Linux产业化运动。
+* 2001年1月，Linux 2.4发布，它进一步地提升了SMP系统的扩展性，同时它也集成了很多用于支持桌面系统的特性：USB，PC卡（PCMCIA）的支持，内置的即插即用，等等功能。
+* 2003年12月，Linux 2.6版内核发布，相对于2.4版内核2.6在对系统的支持都有很大的变化。
+* 2004年的第1月，SuSE嫁到了Novell，SCO继续顶着骂名四处强行“化缘”， Asianux， MandrakeSoft也在五年中首次宣布季度赢利。3月，SGI宣布成功实现了Linux操作系统支持256个Itanium 2处理器。&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——以上均选自[百度百科][4]
+
+## 1.2.3 Linux的基本思想
+&emsp;&emsp;Linux的基本思想有两点最主要的：第一，一切都是文件。是的没错，Linux把系统中所有东西都归结为文件，包括一些设备（软件或硬件）、命令、进程、甚至是操作系统。可以把他们理解为具有各自特性或类型的文件。&emsp;&emsp;第二，每个软件都有自己确定的用途。这也是实现前文所说的系统高效的重要条件。
 
 
 
@@ -55,8 +77,10 @@
 
 
 
-<div align="right">June 12, 2018 4:43 PM</div>
+
+<div align="right">July 26, 2018 4:57 PM</div>
 
 [1]:https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F
 [2]:https://zh.wikipedia.org/wiki/Linux
 [3]:kernel.org
+[4]:https://baike.baidu.com/item/linux
