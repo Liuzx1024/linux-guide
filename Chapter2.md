@@ -84,7 +84,7 @@ Tap:点击Tab键可以实现命令补全,目录补全、命令参数补全;
 5. wc：获取某一个文件的行数和字数，举栗：
 ```
     $ wc package.json 
-    # 79     175  2712package.json
+    # 79     175     2712package.json
 ```
 
 
