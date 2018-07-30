@@ -1,4 +1,5 @@
-<!* Chapter2.md* >
+<!-- Chapter2.md-- >
+
 # 第二章 学习Linux
 
 ## 2.1 从图形界面说起
