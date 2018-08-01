@@ -371,3 +371,299 @@ Step 2:使用mkfs命令格式化磁盘 输入 sudo mkfs 然后按下Tab键，你
 # 格式化virtual.img为ext4格式 
 $ sudo mkfs.ext4 virtual.img
 ```
+
+3. 使用 mount 命令挂载磁盘到目录树
+>用户在 Linux/UNIX 的机器上打开一个文件以前，包含该文件的文件系统必须先进行挂载的动作，此时用户要对该文件系统执行mount的指令以进行挂载。Linux/UNIX文件系统可以对应一个文件而不一定要是硬件设备，所以可以挂载一个包含文件系统的文件到目录树。
+
+具体使用方法如下：
+
+查看下主机已经挂载的文件系统，每一行代表一个设备或虚拟设备格式 [设备名]on[挂载点]：
+
+```
+fanghr@ADMIN:~$ mount 
+rootfs on / type rootfs (rw,relatime)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime) 
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime) 
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmod e=000) 
+tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=204320k,mode=755) 
+none on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k) 
+none on /run/shm type tmpfs (rw,nosuid,nodev,relatime) 
+none on /run/user type tmpfs (rw,nosuid,nodev,noexec,relatime,size=102400k,mod e=755)
+```
+
+挂载文件到目录树mount [-o [操作选项]] [-t 文件系统类型] [-w|--rw|--ro] [文件系统源] [挂载点]:
+
+```
+# 类型可省略，很多时候会自动识别 
+$ mount -o loop -t ext4 virtual.img /mnt 
+# 以只读方式挂载 
+$ mount -o loop --ro virtual.img /mnt
+```
+
+4. 使用fdisk 为磁盘分区 磁盘分区大家肯定也很熟悉，Linux下对磁盘分区的方法也很简单，示例如下
+
+```
+# 查看硬盘分区表信息 
+$ sudo fdisk -l
+# 进入磁盘分区模式 
+$ sudo fdisk virtual.img
+```
+
+到这里，（吹水操作+1）我们初步初步了解了Linux的核心系统，接下来 我们对Linux下的一些常用操作进行叙述。
+
+## 3.5Linux的常用操作
+
+很多人装完系统后第一件事就是装软件，应用部分我们也从软件的安装 说起，还是以Ubuntu为例介绍软件的安装和卸载方法。
+
+### 软件的安装与卸载
+
+Linux上软件的安装有四种形式：
+* 在线安装（apt/脚本） 
+* 从磁盘安装deb/snap/rpm安装包 
+* 从二进制软件包（bin）直接安装 
+* 从源代码安装
+
+### 在线安装
+
+在线安装命令很简洁，我们先看使用方式，然后叙述每一步的意义： \$sudo apt-get install cowsay 如果你在安装一个软件之后，无法立即使用Tab键补全这可命令,使用下述命令刷新(zsh):$ source ~/.zshrc
+
+那么安装的过程究竟发生了什么：
+
+Step 1:apt的守护进程收到请求并核对权限；
+
+Step 2:apt在本地的一个数据库(cache)中搜索关于 cowsay 软件的相关信息；
+
+Step 3:根据这些信息在相关的服务器上下载软件安装。安装某个软件时，如果该软件有其它依赖程序，系统会为我们自动安装所以来的程序；
+
+如果本地的数据库不够新，可能就会发生搜索不到的情况，这时候需要 我们更新本地的数据库，使用命令sudo apt-get update可执行更新；
+
+软件源镜像服务器可能会有多个，有时候某些特定的软件需要我们添加 特定的源； 镜像源的配置文件位于/etc/apt/sources.list中。
+
+#### 对apt-get描述 
+
+很可能apt-get会是很长一段时间内，你使用的最多的命令，我们先对其进行详细的描述： 作用：用于处理 apt包的公用程序集，我们可以用它来在线安装、卸载和升级软件包
+
+apt-get命令后可以接不同的工具实现不同的效果，描述如下：
+
+工具  说明 
+install 其后加上软件包名，用于安装一个软件包
+update
+从软件源镜像服务器上下载/更新用于更新本地软件源 的软件包列表
+upgrade
+升级本地可更新的全部软件包，但存在依赖问题时将 不会升级，通常会在更新之前执行一次update
+distupgrade
+解决依赖关系并升级(存在一定危险性)
+remove
+移除已安装的软件包，包括与被移除软件包有依赖关 系的软件包，但不包含软件包的配置文件
+
+|工具|说明|
+|-|-|
+|install |其后加上软件包名，用于安装一个软件包|
+|update|从软件源镜像服务器上下载/更新用于更新本地软件源 的软件包列表
+|upgrade|升级本地可更新的全部软件包，但存在依赖问题时将 不会升级，通常会在更新之前执行一次update
+|distupgrade|解决依赖关系并升级(存在一定危险性)
+|remove|移除已安装的软件包，包括与被移除软件包有依赖关系的软件包，但不包含软件包的配置文件
+|autoremove |移除之前被其他软件包依赖，但现在不再被使用的软件包
+|purge|与remove相同，但会完全移除软件包，包含其配置文件
+|clean|移除下载到本地的已经安装的软件包，默认保存在/var/cache/apt/archives/
+|autoclean |移除已安装的软件的旧版本软件包
+
+apt-get后还可以更一些常见的参数，对这些参数的描述如下：
+
+-y :自动回应是否安装软件包的选项，在一些自动化安装脚本中使用这个 参数将十分有用
+
+-s: 模拟安装
+
+-q: 静默安装方式，指定多个q或者-q=#,#表示数字，用于设定静默级 别，这在你不想要在安装 软件包时屏幕输出过多时很有用
+
+-f: 修复损坏的依赖关系
+
+-d: 只下载不安装
+
+--reinstall: 重新安装已经安装但可能存在问题的软件包
+
+--install-suggests: 同时安装APT给出的建议安装的软件包
+
+实例
+
+```
+# 重装 
+$ sudo apt-get --reinstall install w3m 
+# 更新软件源
+$ sudo apt-get update 
+# 升级没有依赖问题的软件包 
+$ sudo apt-get upgrade 
+# 升级并解决依赖关系 
+$ sudo apt-get dist-upgrade 
+# 卸载 $ sudo apt-get remove w3m
+
+# 不保留配置文件的移除 
+$ sudo apt-get purge w3m 
+# 或者 sudo apt-get --purge remove 
+# 移除不再需要的被依赖的软件包
+$ sudo apt-get autoremove
+```
+
+#### 使用apt-cache 命令实现软件搜索
+
+sudo apt-cache search softname1 softname2 softname3…… apt-cache命令则是针对本地数据进行相关操作的工具，search 顾名思义在本地的数据库中寻找有关 softname1 softname2 …… 相关软件的信息
+
+使用dpkg从本地磁盘安装deb软件包
+
+有时候我们也需要下载一些安装包安装，比如你想在Ubuntu下使用webstorm，就可以在其官网上下载响应的deb软件包，使用dpkg命令来安装。
+
+dpkg的常见参数如下：
+-i 安装指定deb包
+
+-R 后面加上目录名，用于安装该目录下的所有deb安装包
+
+-r remove，移除某个已安装的软件包
+
+-I 显示deb包文件的信息
+
+-s 显示已安装软件的信息
+
+-S 搜索已安装的软件包
+
+-L 显示已安装软件包的目录信息
+
+使用实例:
+```
+$ cp /var/cache/apt/archives/emacs24_24.3+14ubuntu1_amd64.deb ~ 
+# 安装之前参看deb包的信息 
+$ sudo dpkg -I emacs24_24.3+1-4ubuntu1_amd64.deb 
+# dpkg并不能为你解决依赖关系 
+$ sudo dpkg -i emacs24_24.3+1-4ubuntu1_amd64.deb 
+# 修复依赖关系的安装 
+$ sudo apt-get -f install 
+# 查看已安装软件包的安装目录 
+$ sudo dpkg -L emacs
+```
+### 从二进制安装
+
+二进制包的安装比较简单，我们需要做的只是将从网络上下载的二进制 包解压后放到合适的目录，然后将包含可执行的主程序文件的目录添加 进PATH环境变量即可，如果你不知道该放到什么位置，请重新复习关于 Linux 目录结构的内容。
+
+说到了环境变量(environment variable)，接下来我们仔细聊聊shell下的变 量，并掌握添加环境变量的方法。
+
+## 3.6Linux变量
+
+或许你也有过这样的经历，想通过命令行启动某些操作，比如说使用 VSCode时希望通过在命令行中通过code ./project命令打开相应的文件夹(ps:推荐vscode，一个很好用的带git的编辑器）。
+
+各编程语言中都有变量的概念，Shell中的变量也基本如此，变量有如下特点
+
+* 有不同类型（但不用专门指定类型名） 
+* 可以参与运算 
+* 有作用域限定。
+
+我们看看在bash中添加变量的方法：
+
+```
+#使用 declare 命令创建一个变量名为 tmp 的变量 
+$ declare tmp:
+
+# 使用 = 号赋值运算符，将变量 tmp 赋值为 God 
+$ tmp=God
+
+# 读取变量的值：使用 echo 命令和 $ 符号（$ 符号用于表 示引用一个变量的值） 
+$ echo $tmp 
+# 将输出God
+```
+
+### Shell中的变量类型
+
+1. 自定义变量：当前 Shell 进程私有用户自定义变量，如上面我们创建的 tmp 变量，只在当前 Shell 中有效。 相关命令：
+
+set:显示当前 Shell所有变量，包括其内建环境变量（与Shell外观等相 关），用户自定义变量及导出的环境变量。
+
+2. Shell 本身内建的变量
+
+相关命令:
+
+env:显示与当前用户相关的环境变量，还可以让命令在指定环境中运行。
+
+3. 从自定义变量导出的环境变量。
+
+相关命令：
+
+export ：显示从 Shell中导出成环境变量的变量，也能通过它将自定义变量导出为环境变量。
+
+export temp:导出变量temp为环境变量
+
+* 通常我们习惯将环境变量名设置为大写
+
+>在所有的 UNIX 和类UNIX系统中，每个进程都有其各自的环境变量设置，且默认情况下，当一个进程被创建时，处理创建过程中明确指定的话，它将继承其父进程的绝大部分环境设置。Shell 程序也作为一个进程运行在操作系统之上，而我们在Shell中运行的大部分命令都将以 Shell 的子进程的方式运行。
+
+环境变量，可以简单地理解成如果某变量在当前进程的子进程有效则为 环境变量，否则不是。(在Shell中输入zsh或者bash其实就是创建了一个子 shell)。
+
+我们也可以安装生存周期划分Shell变量：
+* 永久的：需要修改配置文件，变量永久生效； 
+* 临时的：使用 export 命令行声明即可，变量在关闭 shell 时失效。
+
+永久变量涉及到两个重要文件 /etc/bashrc（有的 Linux 没有这个文件） 和 /etc/profile ，它们分别存放的是 shell 变量和环境变量。
+
+~/.profile（不是/etc/profile） 只对当前用户永久生效。而写在/etc/profile 里面的是对所有用户永久生效，所以如果想要添加一个永久生效的环境变量，只需要打开 /etc/profile，在最后加上你想添加的环境变量就好啦。
+
+### 添加命令到环境变量
+
+添加命令到环境变量几乎是每个使用Linux系统的人都会进行的操作：它实现了在 Shell 中输入一个命令，能通过环境变量 PATH 来进行搜索并执行命令，PATH 里面就保存了 Shell 中执行的命令的搜索路径。
+
+添加自定义路径到"PATH"环境变量的具体方法如下：
+
+一次性的：
+```
+# 这里一定要使用绝对路径 
+$ PATH=$PATH:/home/fanghr/mybin 
+# 给 PATH 环境变量追加了一个路径，它也只是在当前 Shell 有效，我一旦退出终端，再打开就会发现又失效了。
+```
+
+通过上述设置，就可以执行mybin目录下的所有命令了。
+
+永久的： 想要永久的添加这类环境变量可以用接下来额方法，每个用户 的 home 目录中有一个 Shell 每次启动时会默认执行一个配置脚本，以初 始化环境，包括添加一些用户自定义环境变量等等。zsh 的配置文件是 .zshrc，相应 Bash 的配置文件为 .bashrc 。它们在 etc 下还都有一个或多 个全局的配置文件，不过我们一般只修改用户目录下的配置文件。
+```
+# 可以简单地使用下面命令直接添加内容到 .zshrc 中 
+$ echo "PATH=$PATH:/home/fanghr/mybin" >> .zshrc
+```
+
+上述命令中 >> 表示将标准输出以追加的方式重定向到一个文件中。当 然，你用vim等编辑器直接打开对应文件也是可以实现类似的操作的。
+
+### 修改和删除已有的变量
+
+有如下几种方式：
+
+* ${变量名#匹配字串}: 从头向后开始匹配，删除符合匹配字串的最 短数据 
+* ${变量名##匹配字串}: 从头向后开始匹配，删除符合匹配字串的最 长数据 
+* ${变量名%匹配字串}: 从尾向前开始匹配，删除符合匹配字串的最 短数据 
+* ${变量名%%匹配字串}: 从尾向前开始匹配，删除符合匹配字串的 最长数据
+* ${变量名/旧的字串/新的字串}:将符合旧字串的第一个字串替换为 新的字串 
+* ${变量名//旧的字串/新的字串}: 将符合旧字串的全部字串替换为新 的字串
+
+删除变量
+
+```
+# 删除变量temp 
+$ unset temp
+```
+让环境变量立即生效： 有时候修改了环境变量并未马上生效可用下面这种方法使其马上生效：
+```
+# 在修改了.zshrc文件后 
+$ source .zshrc 
+# source有一个别名叫做.因此可以用下面的方法使得理解生效 （第一个点后面有一个空格，且路径需要为绝对路径或者相对路 径） 
+$ . ./.zshrc
+```
+
+## 3.7文件的打包和压缩
+
+文件的打包和压缩是另一种我们可能会常做的操作，比如说你想在服务器上部署一个wiki系统，下载了dokuwiki的压缩文件夹，这时候就需要解压啦。
+
+常见压缩格式:
+* *.zip zip程序打包压缩的文件 
+* *.rar rar程序压缩的文件 
+* *.7z 7zip程序压缩的文件 
+* *.tar tar程序打包，未压缩的文件
+* *.gz gzip程序（GNU zip）压缩的文件 
+* *.xz xz程序压缩的文件 
+* *.bz2 bzip2 程序压缩的文件 
+* *.tar .gz tar打包，gzip 程序压缩的文件 
+* *.tar .xz tar打包，xz 程序压缩的文件 
+* *.tar .bz2 tar打包bzip2 程序压缩的文件
+
