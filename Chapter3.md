@@ -667,3 +667,125 @@ $ . ./.zshrc
 * *.tar .xz tar打包，xz 程序压缩的文件 
 * *.tar .bz2 tar打包bzip2 程序压缩的文件
 
+1. 使用zip压缩打包程序
+```
+$ zip -r -q -o fanghr.zip /home/fanghr 
+# 查看文件大小 
+$ du -h fanghr.zip 
+$ file fanghr.zip 
+# 设置不同压缩等级 
+$ zip -r -9 -q -o fanghr_9.zip /home/fanghr -x ~/*.zip 
+$ zip -r -1 -q -o fanghr_1.zip /home/fanghr -x ~/*.zip 
+$ du -h -d 0 *.zip ~ | sort 
+# 创建加密 
+$ zip -r -e -o fanghr_encryption.zip /home/fanghr 
+# 解决windows和linux对换行的不同处理问题 
+$ zip -r -l -o fanghr.zip /home/fanghr
+```
+
+参数说明：
+
+-r:表示递归打包包含子目录的全部内容
+
+-q:表示为安静模式，即不向屏幕输出信息
+
+-o:表示输出文件，需在其后紧跟打包输出文件名
+
+-[1-9]:设置压缩等级，1 表示最快压缩但体积大，9 表示体积最小但耗时 最久。
+
+-x:排除我们上一次创建的 zip 文件，否则又会被打包进这一次的压缩文 件中
+
+-e：创建加密压缩包
+
+-l:将 LF（换行） 转换为 CR+LF(windows 回车加换行)
+
+2. 使用unzip命令解压缩zip文件
+```
+# 基本使用 
+$ unzip fanghr.zip 
+# 静默且指定解压目录，目录不存在会自动创建 
+$ unzip -q fanghr.zip -d ziptest 
+# 使用 -O（英文字母，大写 o）参数指定编码类型 
+$ unzip -O GBK 中文压缩文件.zip
+```
+
+3. rar打包压缩命令
+```
+# 安装 
+$ sudo apt-get update 
+$ sudo apt-get install rar unrar
+
+# 基本使用，a(没有`-`) 参数添加一个目录 ～ 到一个归档文 件中，如果该文件不存在就会自动创建 
+$ rar a fanghr.rar .
+
+# 从指定压缩包文件中删除某个文件： 
+$ rar d fanghr.rar .zshrc
+
+# 查看不解压文件： 
+$ rar l fanghr.rar
+
+# 全路径解压： 
+$ rar l fanghr.rar
+
+# 去掉路径解压： 
+$ mkdir tmp
+$ unrar e fanghr.rar tmp/
+```
+
+4. tar的使用
+>tar 原本只是一个打包工具，只是同时还是实现了对 7z、gzip、xz、bzip2 等工具的支持，这些压缩工具本身只能实现对文件或目录（单独压缩目录中的文件）的压缩，没有实现对文件的打包压缩，所以我们也无需再单独去学习其他几个工具，tar 的解压和压缩都是同一个命令，只需参数不同，使用比较方便。
+
+```
+# 创建一个 tar 包： 
+$ tar -cf fanghr.tar ~
+# 解压 
+$ mkdir tardir 
+$ tar -xf fanghr.tar -C tardir 
+# 查看不解包文件 -t 参数 
+$ tar -tf fanghr.tar 
+# 创建不同格式压缩文件（gzip）
+$ tar -czf fanghr.tar.gz ~ 
+#解压gzip 
+$ tar -xzf fanghr.tar.gz
+```
+
+-c:创建一个 tar 包文件
+
+-f:指定创建的文件名,文件名必须写在-f参数后
+
+-v:以可视的的方式输出打包的文件
+
+-P:保留绝对路径符（默认不保留，防止解压到根目录）
+
+-x:解压
+
+-C:解压到指定路径的已存在目录
+
+-z:使用gzip压缩
+
+其它压缩格式 *.tar .gz:-z *.tar .xz:-J *.tar .bz2:-j
+
+### 获取帮助
+Linux下的命令非常多，遇到不熟悉的命令的情况很常见，不过在Linux获 取相应的帮助的方法也很简单，主要有以下几种方法：
+
+1. help
+
+help 命令是用于显示 shell 内建命令的简要帮助信息。帮助信息中显示有 该命令的简要说明以及一些参数的使用以及说明。
+
+使用:help [command]
+
+2. man
+
+man　没有内建与外部命令的区分，因为 man 工具是显示系统手册页中的内容，也就是一本电子版的字典，这些内容大多数都是对命令的解释信息，还有一些相关的描述。通过查看系统文档中的 man 也可以得到程序的更多相关信息和 Linux的更多特性。
+
+使用:man [command]
+
+3. info
+
+得到的信息比 man 还要多，info 来自自由软件基金会的 GNU 项目，是GNU 的超文本帮助系统，能够更完整的显示出 GNU 信息。
+
+>man 和 info 就像两个集合，它们有一个交集部分，但与 man 相 比，info 工具可显示更完整的　GNU　工具信息。若 man 页包含 的某个工具的概要信息在 info 中也有介绍，那么 man 页中会 有“请参考 info页更详细内容”的字样。
+
+使用:info [command]
+
+好啦,关于Linux的学习就先告一段落。接下来我们进入第二部分，C语言的学习。
