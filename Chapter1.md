@@ -10,7 +10,7 @@
 
 &emsp;&emsp;操作系统（Operating System，OS），是管理计算机硬件和软件资源的计算机程序，同时也是计算机系统的核心和基石。操作系统需要处理如管理和配置内存、决定系统资源供应的优先次序、控制输入输出装置、操作网络及管理文件系统等基本事务。操作系统为用户提供与应用程序交互的方式，如**图形用户界面（Grapical User Interface，GUI）**、**命令行（Command Line或者Shell）**等。应用程序通过**系统调用（System Call)**（在Windows上叫Windows API）来通过操作系统内核访问硬件资源。一般而言，一个完整的计算机系统由**内核（Kernel）**和**用户态应用程序(Usermode Application，APP)/库(Library，参见后文)**组成。
 
-<div align="center"> <img src="400px-Operating_system_architecture.svg.png"></div>
+<div align="center"> <img src="pic/400px-Operating_system_architecture.svg.png"></div>
 
 &emsp;&emsp;简单来讲上面的图可以带给我们底下的概念：
 * **操作系统的核心直接根据硬件写成，所以一个特定的操作系统核心不能在不同的硬件架构下运行。**举例来讲，pc版的Win10不能在手机上运行。
@@ -28,7 +28,7 @@
 * Linux:很多人对Linux的不良印象来自中科红旗的倒闭，但要问世界上哪个操作系统被最广泛的使用——不是Windwos，而是Linux。从物联网（Internet of Things，IOT）嵌入式设备到安卓手机还有大部分的服务器和超级计算机——都基于Linux。可以说，**Linux象征着未来**。——说到底，中国人目前没有能力做自主操作系统——可别跟我说什么氢OS miui，安卓换了个皮而已。
 
 ## 1.2 初识Linux
-<div align="center"><img src="150px-NewTux.svg.png"></div>
+<div align="center"><img src="pic/150px-NewTux.svg.png"></div>
 
 > &emsp;&emsp;Linux是一種自由和開放源碼的**類UNIX（Unix Like）**作業系統。该操作系统的**内核**由林纳斯·托瓦兹（Linus  Torvald）在1991年10月5日首次发布，再加上**使用者空間的應用程式**之後，成為Linux作業系統。Linux也是自由软件和开放源代码软件发展中最著名的例子。只要遵循**GNU通用公共许可证（GPL）**，任何个人和机构都可以自由地使用Linux的所有底层源代码，也可以自由地修改和再发布。
 ——来自[维基百科][2]

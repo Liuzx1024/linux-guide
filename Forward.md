@@ -115,7 +115,7 @@ MIT,详见[LICENSE](LICENSE)
 &emsp;&emsp;感谢~~PornHub~~GitHub在我~~腰腿酸痛精神不振~~时给了我继续写下去的动力，~~并让我差点没挂掉~~，以及我的同桌**上物理课**帮我放风。当然还有超越的各位朋友啦。
 
 ## 关于作者
-<div align="center"><img src="Author.jpeg" title="猥琐的鸟" height="150" width="150"></div>
+<div align="center"><img src="pic/Author.jpeg" title="猥琐的鸟" height="150" width="150"></div>
 
 &emsp;&emsp;本人唯一的爱好就是~~写代码~~上B站看鬼畜，给Linux项目贡献过代码，个人主页在[这里][3]。
 
